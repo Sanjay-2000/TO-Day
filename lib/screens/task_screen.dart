@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_day/screens/addtask_screen.dart';
+import 'package:to_day/Widgets/task_list.dart';
 
 class TaskScreen extends StatelessWidget {
   @override
@@ -87,50 +88,6 @@ class TaskScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TaskList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Texttile(),
-        Texttile(),
-        Texttile(),
-        Texttile(),
-        Texttile(),
-        Texttile(),
-        Texttile(),
-        SizedBox(
-          height: 20,
-        ),
-      ],
-    );
-  }
-}
-
-class Texttile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          title: Text(
-            'Tasks',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-          ),
-          tileColor: Colors.redAccent[400],
-          trailing: Checkbox(
-            value: false,
-            onChanged: (value) {},
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        )
-      ],
     );
   }
 }
