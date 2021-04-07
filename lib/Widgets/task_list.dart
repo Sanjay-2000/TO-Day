@@ -1,24 +1,39 @@
 import 'package:flutter/material.dart';
-import 'text_tile.dart';
+import 'package:to_day/Widgets/task_tile.dart';
 import 'package:to_day/modals/task.dart';
-import 'package:to_day/Widgets/text_tile.dart';
 
 class TaskList extends StatefulWidget {
   @override
   _TaskListState createState() => _TaskListState();
 }
 
-List<Task> tasks = [
-  Task(name: 'Meditate for 20 mins'),
-  Task(name: 'Meditate for 20 mins'),
-  Task(name: 'Meditate for 20 mins'),
-];
-
 class _TaskListState extends State<TaskList> {
   @override
+  List<Task> tasks = [
+    Task(name: 'tasks'),
+    Task(name: 'tasks1'),
+    Task(name: 'tasks2'),
+    Task(name: 'tasks'),
+    Task(name: 'tasks1'),
+    Task(name: 'tasks2'),
+    Task(name: 'tasks'),
+    Task(name: 'tasks1'),
+    Task(name: 'tasks2'),
+  ];
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) {
-      return Texttile();
-    });
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Tasktile(
+          taskTitle: tasks[index].name,
+          ischecked: tasks[index].isdone,
+          checkboxcallback: (bool checkboxState) {
+            setState(() {
+              tasks[index].toggleDone();
+            });
+          },
+        );
+      },
+      itemCount: tasks.length,
+    );
   }
 }
