@@ -4,11 +4,6 @@ import 'package:to_day/Widgets/task_tile.dart';
 import 'package:to_day/modals/task_data.dart';
 
 class TaskList extends StatelessWidget {
-//   @override
-//   _TaskListState createState() => _TaskListState();
-// }
-
-// class _TaskListState extends State<TaskList> {
   @override
   Widget build(BuildContext context) {
     return Consumer<TaskData>(builder: (context, taskData, child) {
@@ -18,9 +13,10 @@ class TaskList extends StatelessWidget {
             taskTitle: taskData.tasks[index].name,
             ischecked: taskData.tasks[index].isdone,
             checkboxcallback: (bool checkboxState) {
-              // setState(() {
-              //   Provider.of<TaskData>(context).tasks[index].toggleDone();
-              // });
+              taskData.updateTask(taskData.tasks[index]);
+            },
+            longpresscallback: () {
+              taskData.deleteTask(taskData.tasks[index]);
             },
           );
         },

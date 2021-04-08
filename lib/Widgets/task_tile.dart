@@ -4,7 +4,12 @@ class Tasktile extends StatelessWidget {
   final bool ischecked;
   final String taskTitle;
   final Function checkboxcallback;
-  Tasktile({this.ischecked, this.taskTitle, this.checkboxcallback});
+  final Function longpresscallback;
+  Tasktile(
+      {this.ischecked,
+      this.taskTitle,
+      this.checkboxcallback,
+      this.longpresscallback});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +30,7 @@ class Tasktile extends StatelessWidget {
             value: ischecked,
             onChanged: checkboxcallback,
           ),
+          onLongPress: longpresscallback,
         ),
         SizedBox(
           height: 20,
