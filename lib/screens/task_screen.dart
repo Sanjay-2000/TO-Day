@@ -87,7 +87,11 @@ class TaskScreen extends StatelessWidget {
                 // child: TaskList(tasks),
                 child: TaskList(),
               ),
-            )
+            ),
+            Container(
+              height: 50,
+              color: Colors.redAccent[600],
+            ),
           ],
         ),
       ),
