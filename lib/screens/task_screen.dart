@@ -5,11 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:to_day/modals/task_data.dart';
 
 class TaskScreen extends StatelessWidget {
-//   @override
-//   _TaskScreenState createState() => _TaskScreenState();
-// }
-
-// class _TaskScreenState extends State<TaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +13,7 @@ class TaskScreen extends StatelessWidget {
           onPressed: () {
             showModalBottomSheet(
                 context: context,
-                builder: (context) => AddTaskScreen((newTaskTitle) {
-                      // setState(() {
-                      //   tasks.add(Task(name: newTaskTitle));
-                      // });
-                      Navigator.pop(context);
-                    }),
+                builder: (context) => AddTaskScreen(),
                 isScrollControlled: false);
           },
           child: Icon(
